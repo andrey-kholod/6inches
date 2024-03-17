@@ -1,0 +1,6 @@
+.bgGradient {
+    @apply w-1/4 rounded border border-violet-500;
+    background: rgb(110, 45, 215);
+    background: linear-gradient(124deg, rgba(110, 45, 215, 1) 0%, rgba(64, 30, 120, 1) 100%);
+
+}

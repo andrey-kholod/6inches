@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-gray-950;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.footer {
+    @apply border-t border-gray-400 w-full text-gray-400 text-center flex justify-between px-5 sm:px-8 m-auto py-5;
+    margin-top: auto;
+}
+
+.line {
+    position: relative;
+}
+
+.line::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    bottom: 0;
+    left: 0;
+    height: 25px;
+    width: 1px;
+    background-color: white;
+}
+
+.line-b {
+    position: relative;
+}
+
+.line-b::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    bottom: 0;
+    right: -8px;
+    height: 18px;
+    width: 1px;
+    background-color: white;
+}
+
+.purple_btn {
+    transition: all .2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.shine {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.shine::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%);
+    animation: shine 1.8s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.purple_btn:active {
+    background-color: rgb(39, 8, 88);
+}
+
+.purple_btn:active .shine {
+    overflow: hidden;
+}
+
+/* .purple_btn:active .shine::before {
+    animation: none;
+
+}  */
+.purple_btn:active .shine::before {
+    animation: none;
+    opacity: 0;
+}
